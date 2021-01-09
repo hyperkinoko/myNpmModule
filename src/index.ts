@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 class Person {
 	private name: string;
 	private age: number;
@@ -9,6 +11,11 @@ class Person {
 	
 	public call(): string {
 		return this.name;
+	}
+	
+	// 追加
+	public tellBirthYear(): string {
+		return dayjs().subtract(this.age, "year").format("YYYY");
 	}
 }
 
